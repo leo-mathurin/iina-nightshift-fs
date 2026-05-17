@@ -38,6 +38,13 @@ Quit IINA fully (`Cmd+Q`) and relaunch — the plugin is scanned only at startup
 
 The plugin listens to IINA's `iina.window-fs.changed` event. On entry it reads the current Night Shift state via `nightlight status`; if it was on, it runs `nightlight off` and remembers the previous state. On exit it runs `nightlight on` only if it had turned it off.
 
+## Permissions
+
+When you install the plugin, IINA asks you to approve two permissions:
+
+- **Access the file system** — required. IINA bundles shell execution under this permission, and the plugin needs to run the `nightlight` CLI. It does not read, write, or modify any of your files; the only external program it invokes is `nightlight`, with the arguments `status`, `on`, and `off`. You can verify this in [`main.js`](main.js).
+- **Show OSD** — used only to display a one-time on-screen warning if `nightlight` is missing from your system. Without it, the warning falls back to the plugin log window (Plugins → log), which most users never open.
+
 ## Caveats
 
 - Night Shift is a global macOS setting. With multiple IINA windows in fullscreen on multiple displays, the restoration may be incorrect.
