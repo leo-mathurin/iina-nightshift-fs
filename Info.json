@@ -1,0 +1,15 @@
+{
+  "name": "Night Shift FS",
+  "identifier": "me.leo.nightshift-fs",
+  "version": "1.0.0",
+  "description": "Disable Night Shift automatically when IINA enters fullscreen, restore it on exit.",
+  "author": {
+    "name": "Léo Mathurin",
+    "url": "https://github.com/leo-mathurin"
+  },
+  "ghRepo": "leo-mathurin/iina-nightshift-fs",
+  "ghVersion": 1,
+  "entry": "main.js",
+  "permissions": ["file-system", "show-osd"],
+  "allowedDomains": []
+}
